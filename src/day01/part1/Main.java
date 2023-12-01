@@ -1,4 +1,4 @@
-package day1.part1;
+package day01.part1;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Main {
     static FileInputStream in;
     public static void main(String[] args) throws IOException {
-        in = new FileInputStream("C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day1\\part1\\input.txt");
+        in = new FileInputStream("C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day01\\part1\\input.txt");
         System.out.println(solve());
     }
 
