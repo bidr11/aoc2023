@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Utils {
+    public interface Solver {
+        int solve() throws IOException;
+    }
     public interface Condition<T> {
         boolean test(T value);
     }
@@ -46,21 +49,4 @@ public class Utils {
 
         return lines.toArray(new String[0]);
     }
-
-//    public static void main(String[] args) {
-//        String inputString = "sldijf 342 df";
-//        int index = 0, number = 0;
-//
-//        index = skipUntil(inputString, index, value -> Character.isDigit(value));
-//        System.out.println("Updated index: " + index);
-//        // Example of using the nextInt method
-//
-//        Pair<Integer,Integer> result = nextInt(inputString, index);
-//        index = result.first;
-//        number = result.second;
-//
-//        // Continue with the updated index or perform other actions
-//        System.out.println("Parsed integer: " + number);
-//        System.out.println("Updated index: " + index);
-//    }
 }
