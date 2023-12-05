@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import static day04.Scratchcards.countMatches;
-import static day04.Scratchcards.in;
+import static day04.Main.in;
 import static utils.Utils.readLines;
 
 public class Part2 implements Utils.Solver {
