@@ -11,14 +11,11 @@ public class Main {
     static String filename = "C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day02\\input";
     static Map<Character, Integer> MAX_COUNTS = new HashMap<>();
     public static void main(String[] args) throws IOException {
-        init();
-        System.out.println(solve());
-    }
-    public static void init() throws FileNotFoundException {
         in = new BufferedReader(new FileReader(filename));
         MAX_COUNTS.put('r', 12);
         MAX_COUNTS.put('g', 13);
         MAX_COUNTS.put('b', 14);
+        System.out.println(solve());
     }
     public static boolean parse(String line) {
         int i = 0;

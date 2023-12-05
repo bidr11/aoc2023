@@ -10,17 +10,17 @@ import java.util.*;
 public class Main {
     static BufferedReader in;
     static String filename = "C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day03\\input";
-    static Queue<Map> symbolIndices = new LinkedList<>();
+    static Queue<Map<Integer, Utils.Pair<Integer,Integer>>> symbolIndices = new LinkedList<>();
     public static void main(String[] args) throws IOException {
         in = new BufferedReader(new FileReader(filename));
         System.out.println(solve());
     }
-    public static void isValid(int startIndex, int endIndex, Map.Entry<Integer,Pair> entry, int number) {
+    public static void isValid(int startIndex, int endIndex, Map.Entry<Integer, Utils.Pair<Integer,Integer>> entry, int number) {
         int validLeft = startIndex - 1, validRight = endIndex + 1;
         if (validLeft > entry.getKey() || entry.getKey() > validRight)
             return;
 
-        Pair pair = entry.getValue();
+        Utils.Pair<Integer,Integer> pair = entry.getValue();
         if (pair.first == -1 && pair.second == -1)
             pair.first = number;
         else if (pair.second == -1)
@@ -33,10 +33,10 @@ public class Main {
         if (symbolIndices.size() > 2)
             symbolIndices.poll();
 
-        Map<Integer, Pair> lineSymbols = new HashMap<>(); // index: {number1, number2}
+        Map<Integer, Utils.Pair<Integer,Integer>> lineSymbols = new HashMap<>(); // index: {number1, number2}
         for (int i = 0; i < line.length(); i++) {
             if (line.charAt(i) == '*')
-                lineSymbols.put(i, new Pair(-1 ,-1));
+                lineSymbols.put(i, new Utils.Pair<>(-1 ,-1));
         }
         symbolIndices.add(lineSymbols);
     }
@@ -60,15 +60,15 @@ public class Main {
             number = result.second;
 
             // check if the number is valid (adjacent to symbol)
-            for (Map<Integer,Pair> lineSymbols: symbolIndices) {
+            for (Map<Integer, Utils.Pair<Integer,Integer>> lineSymbols: symbolIndices) {
                 if (lineSymbols == null)
                     continue;
 
-                for (Map.Entry<Integer,Pair> entry: lineSymbols.entrySet()){
+                for (Map.Entry<Integer,Utils.Pair<Integer,Integer>> entry: lineSymbols.entrySet()){
                     isValid(start, end, entry, number);
                 }
 
-                for (Pair pair : lineSymbols.values()) {
+                for (Utils.Pair<Integer,Integer> pair : lineSymbols.values()) {
                     if (pair.first != -1 && pair.second != -1) {
                         res += pair.first * pair.second;
                         pair.first = pair.second = -1;

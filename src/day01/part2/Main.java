@@ -1,5 +1,7 @@
 package day01.part2;
 
+import utils.Utils;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,21 +24,21 @@ public class Main {
     }
 
     public static int parse(String line) {
-        int[] left = new int[]{-1, Integer.MAX_VALUE};
-        int[] right = new int[]{-1, Integer.MIN_VALUE};
+        Utils.Pair<Integer,Integer> left = new Utils.Pair<>(-1, Integer.MAX_VALUE);
+        Utils.Pair<Integer,Integer> right = new Utils.Pair<>(-1, Integer.MAX_VALUE);
 
         for (int d = 0; d < digits.length; d++) {
             int i = 0;
             while (i < line.length()) {
                 int j = longestMatch(line, digits[d], i);
                 if (j == digits[d].length()) {
-                    if (left[1] > i) {
-                        left[0] = d + 1;
-                        left[1] = i;
+                    if (left.second > i) {
+                        left.first = d + 1;
+                        left.second = i;
                     }
-                    if (right[1] < i) {
-                        right[0] = d + 1;
-                        right[1] = i;
+                    if (right.second < i) {
+                        right.first = d + 1;
+                        right.second = i;
                     }
                 }
 
@@ -49,19 +51,19 @@ public class Main {
         int i = 0;
         while (i < line.length()) {
             if (Character.isDigit(line.charAt(i))) {
-                if (left[1] > i) {
-                    left[0] = line.charAt(i) - '0';
-                    left[1] = i;
+                if (left.second > i) {
+                    left.first = line.charAt(i) - '0';
+                    left.second = i;
                 }
-                if (right[1] < i) {
-                    right[0] = line.charAt(i) - '0';
-                    right[1] = i;
+                if (right.second < i) {
+                    right.first = line.charAt(i) - '0';
+                    right.second = i;
                 }
             }
             i++;
         }
 
-        return left[0] * 10 + right[0];
+        return left.first * 10 + right.second;
 
     }
 

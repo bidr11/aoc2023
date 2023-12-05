@@ -3,7 +3,6 @@ package day02.part2;
 import utils.Utils;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Collection;
@@ -14,11 +13,8 @@ public class Main {
     static BufferedReader in;
     static String filename = "C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day02\\input";
     public static void main(String[] args) throws IOException {
-        init();
-        System.out.println(solve());
-    }
-    public static void init() throws FileNotFoundException {
         in = new BufferedReader(new FileReader(filename));
+        System.out.println(solve());
     }
     public static Collection<Integer> parse(String line) {
         Map<Character,Integer> min_counts = new HashMap<>();
