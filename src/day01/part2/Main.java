@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Main {
     static BufferedReader in;
-    static String filename = "C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day01\\part1\\input.txt";
+    static String filename = "C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day01\\input";
     static String[] digits = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
     public static void main(String[] args) throws IOException {
         in = new BufferedReader(new FileReader(filename));

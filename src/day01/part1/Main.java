@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Main {
     static FileInputStream in;
     public static void main(String[] args) throws IOException {
-        in = new FileInputStream("C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day01\\part1\\input.txt");
+        in = new FileInputStream("C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day01\\input");
         System.out.println(solve());
     }
 

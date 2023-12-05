@@ -1,15 +1,18 @@
 package day02.part2;
 
+import utils.Utils;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
     static BufferedReader in;
-    static String filename = "C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day02\\part2\\input";
+    static String filename = "C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day02\\input";
     public static void main(String[] args) throws IOException {
         init();
         System.out.println(solve());
@@ -17,32 +20,25 @@ public class Main {
     public static void init() throws FileNotFoundException {
         in = new BufferedReader(new FileReader(filename));
     }
-    public static int parse(String line) {
+    public static Collection<Integer> parse(String line) {
+        Map<Character,Integer> min_counts = new HashMap<>();
         int i = 0;
-        while (line.charAt(i) != ':')
-            i++;
-        line = line.substring(i+2);
+        i = Utils.skipUntil(line, i, c -> c == ':');
 
-        Map<String, Integer> min_counts = new HashMap<>();
-        String[] colors = line.split("(; |, )");
-        for (String colorCount: colors) {
-            int num = 0;
-            for (int c = 0; c < colorCount.length(); c++) {
-                if (Character.isDigit(colorCount.charAt(c))) {
-                    num = num * 10 + colorCount.charAt(c) - '0';
-                } else {
-                    String col = colorCount.substring(c + 1);
-                    if (num > min_counts.getOrDefault(col, 0))
-                        min_counts.put(col, num);
-                    break;
-                }
-            }
+        while (i < line.length()) {
+            i = Utils.skipUntil(line, i, Character::isDigit);
+
+            Utils.Pair<Integer, Integer> result = Utils.nextInt(line, i);
+            i = result.first + 1;
+            int number = result.second;
+
+            if (number > min_counts.getOrDefault(line.charAt(i), 0))
+                min_counts.put(line.charAt(i), number);
+
+            i = Utils.skipUntil(line, i, c -> c == ';' || c == ',');
         }
-        int ans = 1;
-        for (int count : min_counts.values()) {
-            ans *= count;
-        }
-        return ans;
+        return min_counts.values();
+
     }
 
     public static int solve() throws IOException {
@@ -50,7 +46,7 @@ public class Main {
 
         String line;
         while ((line = in.readLine()) != null) {
-            res += parse(line);
+            res += parse(line).stream().reduce(1, (a,b) -> a * b);
         }
 
         return res;
