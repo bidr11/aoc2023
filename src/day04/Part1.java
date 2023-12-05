@@ -9,7 +9,7 @@ import static day04.Scratchcards.*;
 
 public class Part1 implements Utils.Solver {
 
-    public int solve() throws IOException {
+    public Object solve() throws IOException {
         int res = 0;
 
         String line;

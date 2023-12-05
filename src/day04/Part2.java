@@ -10,7 +10,7 @@ import static day04.Main.in;
 import static utils.Utils.readLines;
 
 public class Part2 implements Utils.Solver {
-    public int solve() throws IOException {
+    public Object solve() throws IOException {
         String[] lines = readLines(in);
         int[] matches = new int[lines.length];
         Arrays.fill(matches, 1);

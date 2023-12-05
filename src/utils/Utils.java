@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Utils {
     public interface Solver {
-        int solve() throws IOException;
+        <T> T solve() throws IOException;
     }
     public interface Condition<T> {
         boolean test(T value);
@@ -41,6 +41,15 @@ public class Utils {
         return new Pair<>(index, number);
     }
 
+    public static Pair<Integer,Long> nextLong(String str, int index) {
+        long number = 0;
+        while (index < str.length() && Character.isDigit(str.charAt(index))) {
+            number = number * 10 + (str.charAt(index) - '0');
+            index++;
+        }
+        return new Pair<>(index, number);
+    }
+
     public static String[] readLines(BufferedReader in) throws IOException {
         String line;
         List<String> lines = new ArrayList<>();
@@ -49,4 +58,23 @@ public class Utils {
 
         return lines.toArray(new String[0]);
     }
+//    public static <T extends Comparable<T>> T findMin(Iterable<T> iterable) {
+//        if (iterable == null) {
+//            throw new IllegalArgumentException("Iterable cannot be null");
+//        }
+//
+//        T min = iterable.;
+//
+//        for (T element : iterable) {
+//            if (min == null || element.compareTo(min) < 0) {
+//                min = element;
+//            }
+//        }
+//
+//        if (min == null) {
+//            throw new IllegalArgumentException("Iterable cannot be empty");
+//        }
+//
+//        return min;
+//    }
 }
