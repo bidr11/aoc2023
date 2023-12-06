@@ -81,4 +81,15 @@ public class Utils {
 
         return min;
     }
+    public static List<Integer> extractNumbers(String line) {
+        List<Integer> list = new ArrayList<>();
+        int i = 0;
+        while (i < line.length()) {
+            i = skipUntil(line, i, Character::isDigit);
+            Pair<Integer,Integer> result = nextInt(line, i);
+            i = result.first;
+            list.add(result.second);
+        }
+        return list;
+    }
 }
