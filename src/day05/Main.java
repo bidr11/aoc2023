@@ -6,8 +6,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import static day05.Seeds.filename;
-
 public class Main {
     static BufferedReader in;
     public static void main(String[] args) throws IOException {
@@ -16,6 +14,7 @@ public class Main {
     }
 
     public static void solve(Utils.Solver<Long> solver) throws IOException {
+        String filename = Utils.getFilename(Main.class);
         in = new BufferedReader(new FileReader(filename));
         long ans = solver.solve();
         System.out.println(ans);

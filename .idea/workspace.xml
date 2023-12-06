@@ -7,11 +7,8 @@
     <list default="true" id="cb047437-e474-46d8-88f7-0ac9ba0f580e" name="Changes" comment="refactored code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day04/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day04/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day04/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day04/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day04/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day04/Part2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/day05/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/Part2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/day05/Seeds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/Seeds.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +71,7 @@
       <recent name="day1.part2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.day05.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day02.part1.Main" />
       <module name="AdventOfCode2023" />
@@ -116,8 +113,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.day05.Main" />
         <item itemvalue="Application.day04.Main" />
+        <item itemvalue="Application.day05.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -142,7 +139,7 @@
       <workItem from="1701789934971" duration="2048000" />
       <workItem from="1701792560571" duration="5537000" />
       <workItem from="1701819730409" duration="1102000" />
-      <workItem from="1701820945801" duration="855000" />
+      <workItem from="1701820945801" duration="2133000" />
     </task>
     <task id="LOCAL-00001" summary="first part">
       <created>1701458971688</created>
@@ -193,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701795846571</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactored code">
+      <created>1701821827704</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701821827704</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

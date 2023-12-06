@@ -2,10 +2,12 @@ package utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Utils {
+
     public interface Solver<T> {
         T solve() throws IOException;
     }
@@ -24,7 +26,9 @@ public class Utils {
 
         public Pair() { }
     }
-
+    public static String getFilename(Class<?> clazz) {
+        return Paths.get(System.getProperty("user.dir"), "src", clazz.getPackageName(), "input").toString();
+    }
     public static int skipUntil(String str, int index, Condition<Character> condition) {
         while (index < str.length() && !condition.test(str.charAt(index))) {
             index++;

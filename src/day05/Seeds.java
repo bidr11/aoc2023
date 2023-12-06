@@ -7,7 +7,6 @@ import static utils.Utils.*;
 
 
 public class Seeds {
-    static String filename = "C:\\Users\\bidr\\Desktop\\AdventOfCode2023\\src\\day05\\input";
     public static class SeedMap {
         long dest_start, src_start, range_len;
 
