@@ -5,11 +5,10 @@ import utils.Utils;
 import java.io.IOException;
 
 import static day05.Main.in;
-import static utils.Utils.readLines;
 
-public class Part2 implements Utils.Solver {
-    public Object solve() throws IOException {
-        String[] lines = readLines(in);
+public class Part2 implements Utils.Solver<Long> {
+    public Long solve() throws IOException {
+        String[] lines = Utils.readLines(in);
 //        int[] matches = new int[lines.length];
 //        Arrays.fill(matches, 1);
 
@@ -22,6 +21,6 @@ public class Part2 implements Utils.Solver {
         }
 
 //        return Arrays.stream(matches).sum();
-        return 0;
+        return (long)0;
     }
 }

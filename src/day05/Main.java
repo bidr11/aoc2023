@@ -15,7 +15,7 @@ public class Main {
 //        solve(new Part2());
     }
 
-    public static void solve(Utils.Solver solver) throws IOException {
+    public static void solve(Utils.Solver<Long> solver) throws IOException {
         in = new BufferedReader(new FileReader(filename));
         long ans = solver.solve();
         System.out.println(ans);

@@ -5,16 +5,15 @@ import utils.Utils;
 import java.io.IOException;
 
 import static day04.Main.in;
-import static day04.Scratchcards.*;
 
-public class Part1 implements Utils.Solver {
+public class Part1 implements Utils.Solver<Integer> {
 
-    public Object solve() throws IOException {
+    public Integer solve() throws IOException {
         int res = 0;
 
         String line;
         while ((line = in.readLine()) != null) {
-            int match = countMatches(line);
+            int match = Scratchcards.countMatches(line);
             res += 1 << match >> 1;
         }
 
