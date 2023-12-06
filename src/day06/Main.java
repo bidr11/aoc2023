@@ -14,9 +14,7 @@ public class Main {
         solve(new Part1());
         solve(new Part2());
 
-        long endTime = System.nanoTime();
-
-        System.out.println("Total time: " + (endTime * 1.0 - startTime * 1.0) / 1_000_000 + "ms");
+        System.out.println("Total time: " + (System.nanoTime() * 1.0 - startTime * 1.0) / 1_000_000 + "ms");
     }
 
     public static <T extends Number> void solve(Utils.Solver<T> solver) throws IOException {
