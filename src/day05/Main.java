@@ -10,7 +10,7 @@ public class Main {
     static BufferedReader in;
     public static void main(String[] args) throws IOException {
         solve(new Part1());
-//        solve(new Part2());
+        solve(new Part2());
     }
 
     public static void solve(Utils.Solver<Long> solver) throws IOException {

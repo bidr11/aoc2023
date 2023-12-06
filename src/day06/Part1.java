@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static day06.Main.in;
-import static day06.WaitForIt.getWinnings;
+import static day06.WaitForIt.*;
 
 
 public class Part1 implements Utils.Solver<Integer> {

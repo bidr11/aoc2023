@@ -17,10 +17,23 @@ public class Seeds {
         }
         public SeedMap() {}
     }
-    public static List<Long> parseSeeds(String line) {
-        return extractNumbers(line);
-    }
+    public static List<Pair<Long,Long>> parseSeeds(String line) {
+        List<Pair<Long,Long>> list = new ArrayList<>();
 
+        int i = 0;
+        while (i < line.length()) {
+            Pair<Integer,Long> startResult = nextLong(line, i);
+            Pair<Integer,Long> rangeResult = nextLong(line, startResult.first);
+
+            long start = startResult.second;
+            long range = rangeResult.second;
+
+            i = rangeResult.first;
+            list.add(new Pair<>(start, start + range - 1));
+        }
+
+        return list;
+    }
     public static SeedMap parseMap(String line) {
         List<Long> list = extractNumbers(line);
         return new SeedMap(list.get(0), list.get(1), list.get(2));
@@ -33,11 +46,10 @@ public class Seeds {
         }
         return src;
     }
-    private static List<Long> extractNumbers(String line) {
+    public static List<Long> extractNumbers(String line) {
         List<Long> list = new ArrayList<>();
         int i = 0;
         while (i < line.length()) {
-            i = skipUntil(line, i, Character::isDigit);
             Pair<Integer,Long> result = nextLong(line, i);
             i = result.first;
             list.add(result.second);

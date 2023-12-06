@@ -3,24 +3,29 @@ package day05;
 import utils.Utils;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import static utils.Utils.*;
 
 import static day05.Main.in;
+import static day05.Seeds.parseSeeds;
 
 public class Part2 implements Utils.Solver<Long> {
     public Long solve() throws IOException {
-        String[] lines = Utils.readLines(in);
-//        int[] matches = new int[lines.length];
-//        Arrays.fill(matches, 1);
+        String line = in.readLine();
+        List<Pair<Long,Long>> nextStep = parseSeeds(line);
 
-        for (int i = lines.length - 1; i >= 0; i--) {
-            String line = lines[i];
-//            int match = countMatches(line);
-//
-//            for (int j = i+1; j <= i + match; j++)
-//                matches[i] += matches[j];
+        in.readLine(); // empty line
+
+        while (in.readLine() != null) {
+            List<Seeds.SeedMap> maps = new ArrayList<>();
+
+            while ((line = in.readLine()) != null && !line.isEmpty()) {
+                maps.add(Seeds.parseMap(line));
+                // TODO
+            }
+
         }
-
-//        return Arrays.stream(matches).sum();
-        return (long)0;
+        return Utils.findMin(nextStep.stream().map(p -> p.first).toList());
     }
 }

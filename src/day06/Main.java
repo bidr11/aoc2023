@@ -9,14 +9,20 @@ import java.io.IOException;
 public class Main {
     static BufferedReader in;
     public static void main(String[] args) throws IOException {
+        long startTime = System.nanoTime();
+
         solve(new Part1());
         solve(new Part2());
+
+        long endTime = System.nanoTime();
+
+        System.out.println("Total time: " + (endTime * 1.0 - startTime * 1.0) / 1_000_000 + "ms");
     }
 
-    public static void solve(Utils.Solver solver) throws IOException {
+    public static <T extends Number> void solve(Utils.Solver<T> solver) throws IOException {
         String filename = Utils.getFilename(Main.class);
         in = new BufferedReader(new FileReader(filename));
-        Object ans = solver.solve();
+        T ans = solver.solve();
         System.out.println(ans);
     }
 }

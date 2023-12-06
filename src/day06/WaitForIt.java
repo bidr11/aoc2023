@@ -3,35 +3,28 @@ package day06;
 import utils.Utils;
 
 public class WaitForIt {
-    public static int getWinnings(int time, int distance) {
-        int speed = 1;
-        int ans = 0;
+//    public static long getWinnings(long time, long distance) {
+//        long speed = 1;
+//        long ans = 0;
+//
+//        while (speed * (time - speed) <= distance) {
+//            speed++;
+//        }
+//        long s = speed;
+//
+//        while (speed * (time - speed) > distance) {
+//            speed++;
+//            ans++;
+//        }
+//
+//        return ans;
+//    }
 
-        while (speed * (time - speed) <= distance) {
-            speed++;
-        }
-
-        while (speed * (time - speed) > distance) {
-            speed++;
-            ans++;
-        }
-
-        return ans;
-    }
     public static long getWinnings(long time, long distance) {
-        long speed = 1;
-        long ans = 0;
-
-        while (speed * (time - speed) <= distance) {
-            speed++;
-        }
-
-        while (speed * (time - speed) > distance) {
-            speed++;
-            ans++;
-        }
-
-        return ans;
+        long delta = time * time - 4 * distance;
+        long start = (long) (-1 * (- time + Math.sqrt(delta)) / 2);
+        long end = (long) (-1 * (- time - Math.sqrt(delta)) / 2);
+        return end - start;
     }
 
     public static long getNumber(String line) {

@@ -37,6 +37,8 @@ public class Utils {
     }
 
     public static Pair<Integer,Integer> nextInt(String str, int index) {
+        index = skipUntil(str, index, Character::isDigit);
+
         int number = 0;
         while (index < str.length() && Character.isDigit(str.charAt(index))) {
             number = number * 10 + (str.charAt(index) - '0');
@@ -46,6 +48,8 @@ public class Utils {
     }
 
     public static Pair<Integer,Long> nextLong(String str, int index) {
+        index = skipUntil(str, index, Character::isDigit);
+
         long number = 0;
         while (index < str.length() && Character.isDigit(str.charAt(index))) {
             number = number * 10 + (str.charAt(index) - '0');
@@ -92,4 +96,6 @@ public class Utils {
         }
         return list;
     }
+
+
 }
