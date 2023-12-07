@@ -37,14 +37,11 @@ public class Part2 implements Utils.Solver<Integer> {
         }
 
         int i = matchingCards.length - 1;
-        while (i >= 0 && jokerCount > 0) {
-            if (matchingCards[i] != 0) {
-                matchingCards[i + jokerCount]++;
-                matchingCards[i]--;
-                jokerCount = 0;
-            }
+        while (i >= 0 && matchingCards[i] == 0)
             i--;
-        }
+
+        matchingCards[i + jokerCount]++;
+        matchingCards[i]--;
 
         return matchingCards;
     }
