@@ -62,7 +62,8 @@ public class Utils {
         String line;
         List<String> lines = new ArrayList<>();
         while ((line = in.readLine()) != null)
-            lines.add(line);
+            if (!line.isEmpty())
+                lines.add(line);
 
         return lines.toArray(new String[0]);
     }

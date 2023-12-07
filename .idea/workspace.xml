@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb047437-e474-46d8-88f7-0ac9ba0f580e" name="Changes" comment="refactored code">
-      <change afterPath="$PROJECT_DIR$/src/day06/input" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day07/CamelCards.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day07/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day07/Part1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/day07/input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day04/Scratchcards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day04/Scratchcards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day05/Seeds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day05/Seeds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day06/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day06/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day06/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day06/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day06/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day06/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/day06/WaitForIt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/day06/WaitForIt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +31,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2YwvDbgWU6Vy218kS1njZpe95sd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -73,13 +71,14 @@
       <recent name="C:\Users\bidr\Desktop\AdventOfCode2023\src\day1\part1" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="day07" />
       <recent name="day06" />
       <recent name="day03.part2" />
       <recent name="day03.part1" />
       <recent name="day1.part2" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.day06.Main">
+  <component name="RunManager" selected="Application.day07.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="day02.part1.Main" />
       <module name="AdventOfCode2023" />
@@ -132,8 +131,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="day07.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day07.Main" />
+      <module name="AdventOfCode2023" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day07.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.day07.Main" />
         <item itemvalue="Application.day06.Main" />
         <item itemvalue="Application.day05.Main" />
         <item itemvalue="Application.day04.Main" />
@@ -164,7 +177,9 @@
       <workItem from="1701820945801" duration="2361000" />
       <workItem from="1701850562818" duration="2880000" />
       <workItem from="1701855023098" duration="391000" />
-      <workItem from="1701864998452" duration="6275000" />
+      <workItem from="1701864998452" duration="7450000" />
+      <workItem from="1701873041293" duration="545000" />
+      <workItem from="1701940097954" duration="6092000" />
     </task>
     <task id="LOCAL-00001" summary="first part">
       <created>1701458971688</created>
@@ -236,7 +251,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701853467823</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactored code">
+      <created>1701871714156</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701871714156</updated>
+    </task>
+    <task id="LOCAL-00012" summary="refactored code">
+      <created>1701871929735</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701871929735</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
