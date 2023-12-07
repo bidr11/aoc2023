@@ -2,25 +2,18 @@ package day07;
 
 import utils.Utils;
 
-import java.util.HashMap;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 
+import static day07.Main.in;
+
 public class CamelCards {
-    private static final Map<Character,Integer> cardValues = new HashMap<>() {{
-        this.put('2', 1);
-        this.put('3', 2);
-        this.put('4', 3);
-        this.put('5', 4);
-        this.put('6', 5);
-        this.put('7', 6);
-        this.put('8', 7);
-        this.put('9', 8);
-        this.put('T', 9);
-        this.put('J', 10);
-        this.put('Q', 11);
-        this.put('K', 12);
-        this.put('A', 13);
-    }};
+    public interface CardMatcher {
+        int[] getMatchingCards(int[] cardCounts);
+    }
     private static int getHandType(int[] matchingCards) {
         int handType = -1;
 
@@ -39,9 +32,11 @@ public class CamelCards {
         else if (matchingCards[0] == 5)
             handType = 0; // High card
 
+        assert handType != -1;
+
         return handType;
     }
-    public static long handStrength(String line) {
+    public static long handStrength(String line, Map<Character,Integer> cardValues, CardMatcher cardMatcher) {
         int[] cardCounts = new int[13];
         int strength = 0;
         int handType;
@@ -53,21 +48,29 @@ public class CamelCards {
             i++;
         }
 
-        int[] matchingCards = new int[5];
-        for (int count: cardCounts) {
-            if (count > 0)
-                matchingCards[count - 1]++;
-        }
+        int[] matchingCards = cardMatcher.getMatchingCards(cardCounts);
         handType = getHandType(matchingCards);
 
-        return ((long) handType * 13 * 13 * 13 * 13 * 13) + strength;
+        return ((long) handType * 13 * 13 * 13 * 13 * 13 * 13 * 13) + strength;
     }
+    public static int solve(Map<Character,Integer> cardValues, CardMatcher cardMatcher) throws IOException {
+        List<Utils.Pair<Long,Integer>> hands = new ArrayList<>();
+        int ans = 0;
 
-    public static Utils.Pair<Long,Integer> handAndBet(String line) {
-        long hand = handStrength(line);
-        int bet = Utils.nextInt(line, 5).second;
+        String line;
+        while ((line = in.readLine()) != null) {
+            long hand = handStrength(line, cardValues, cardMatcher);
+            int bet = Utils.nextInt(line, 5).second;
+            hands.add(new Utils.Pair<>(hand, bet));
+        }
+        hands.sort(Comparator.comparingLong(a -> a.first));
 
-        return new Utils.Pair<>(hand, bet);
+        for (int rank = 0; rank < hands.size(); rank++) {
+            int bet = hands.get(rank).second;
+            ans += bet * (rank + 1);
+        }
+
+        return ans;
     }
 }
 

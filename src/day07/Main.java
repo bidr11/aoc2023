@@ -12,7 +12,7 @@ public class Main {
         long startTime = System.nanoTime();
 
         solve(new Part1());
-//        solve(new Part2());
+        solve(new Part2());
 
         System.out.println("Total time: " + (System.nanoTime() * 1.0 - startTime * 1.0) / 1_000_000 + "ms");
     }
