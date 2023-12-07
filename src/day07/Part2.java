@@ -25,6 +25,11 @@ public class Part2 implements Utils.Solver<Integer> {
         int[] matchingCards = new int[5];
         int jokerCount = cardCounts[0];
 
+        if (jokerCount == 5) {
+            matchingCards[matchingCards.length - 1] = 1;
+            return matchingCards;
+        }
+
         for (int i = cardCounts.length - 1; i >= 1; i--) {
             int count = cardCounts[i];
             if (count > 0)
@@ -32,18 +37,14 @@ public class Part2 implements Utils.Solver<Integer> {
         }
 
         int i = matchingCards.length - 1;
-        while (i >= 0) {
+        while (i >= 0 && jokerCount > 0) {
             if (matchingCards[i] != 0) {
                 matchingCards[i + jokerCount]++;
-                jokerCount = 0;
                 matchingCards[i]--;
-                break;
+                jokerCount = 0;
             }
             i--;
         }
-
-        if (jokerCount > 0)
-            matchingCards[matchingCards.length - 1] = 1;
 
         return matchingCards;
     }
