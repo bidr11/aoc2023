@@ -57,6 +57,26 @@ public class Utils {
         }
         return new Pair<>(index, number);
     }
+    public static Pair<Integer,String> nextWord(String str, int index) {
+        index = skipUntil(str, index, Character::isLetter);
+
+        StringBuilder sb = new StringBuilder();
+        while (index < str.length() && Character.isLetter(str.charAt(index))) {
+            sb.append(str.charAt(index));
+            index++;
+        }
+        return new Pair<>(index, sb.toString());
+    }
+    public static Pair<Integer,String> nextString(String str, int index) {
+        index = skipUntil(str, index, c -> Character.isLetter(c) || Character.isDigit(c));
+
+        StringBuilder sb = new StringBuilder();
+        while (index < str.length() && (Character.isLetter(str.charAt(index)) || Character.isDigit(str.charAt(index)))) {
+            sb.append(str.charAt(index));
+            index++;
+        }
+        return new Pair<>(index, sb.toString());
+    }
 
     public static String[] readLines(BufferedReader in) throws IOException {
         String line;
@@ -97,6 +117,10 @@ public class Utils {
         }
         return list;
     }
-
-
+    public static long gcd(long a, long b) {
+        return (b == 0) ? a : gcd(b, a % b);
+    }
+    public static long lcm(long a, long b) {
+        return a * b / gcd(a, b);
+    }
 }
