@@ -112,6 +112,9 @@ public class Utils {
         while (i < line.length()) {
             i = skipUntil(line, i, Character::isDigit);
             Pair<Integer,Integer> result = nextInt(line, i);
+            if (i > 0 && line.charAt(i - 1) == '-') {
+                result.second *= -1;
+            }
             i = result.first;
             list.add(result.second);
         }
