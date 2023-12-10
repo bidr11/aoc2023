@@ -2,13 +2,13 @@ package day04;
 
 import utils.Utils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Arrays;
 
-import static day04.Main.in;
 
 public class Part2 implements Utils.Solver<Integer> {
-    public Integer solve() throws IOException {
+    public Integer solve(BufferedReader in) throws IOException {
         String[] lines = Utils.readLines(in);
         int[] matches = new int[lines.length];
         Arrays.fill(matches, 1);

@@ -20,7 +20,7 @@ public class Main {
     public static <T extends Number> void solve(Utils.Solver<T> solver) throws IOException {
         String filename = Utils.getFilename(Main.class);
         in = new BufferedReader(new FileReader(filename));
-        T ans = solver.solve();
+        T ans = solver.solve(in);
         System.out.println(ans);
     }
 }

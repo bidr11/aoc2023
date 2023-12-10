@@ -9,7 +9,7 @@ import java.util.List;
 public class Utils {
 
     public interface Solver<T> {
-        T solve() throws IOException;
+        T solve(BufferedReader in) throws IOException;
     }
     public interface Condition<T> {
         boolean test(T value);

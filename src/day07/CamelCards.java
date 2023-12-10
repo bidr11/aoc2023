@@ -2,13 +2,12 @@ package day07;
 
 import utils.Utils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-
-import static day07.Main.in;
 
 public class CamelCards {
     public interface CardMatcher {
@@ -53,7 +52,7 @@ public class CamelCards {
 
         return ((long) handType * 13 * 13 * 13 * 13 * 13 * 13 * 13) + strength;
     }
-    public static int solve(Map<Character,Integer> cardValues, CardMatcher cardMatcher) throws IOException {
+    public static int solve(BufferedReader in, Map<Character,Integer> cardValues, CardMatcher cardMatcher) throws IOException {
         List<Utils.Pair<Long,Integer>> hands = new ArrayList<>();
         int ans = 0;
 

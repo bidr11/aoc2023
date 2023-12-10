@@ -2,13 +2,13 @@ package day04;
 
 import utils.Utils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 
-import static day04.Main.in;
 
 public class Part1 implements Utils.Solver<Integer> {
 
-    public Integer solve() throws IOException {
+    public Integer solve(BufferedReader in) throws IOException {
         int res = 0;
 
         String line;

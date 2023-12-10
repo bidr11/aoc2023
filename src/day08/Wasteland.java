@@ -2,14 +2,13 @@ package day08;
 
 import utils.Utils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static day08.Main.in;
-
 public class Wasteland {
-    public static Map<String, Utils.Pair<String,String>> getMap() throws IOException {
+    public static Map<String, Utils.Pair<String,String>> getMap(BufferedReader in) throws IOException {
         Map<String,Utils.Pair<String,String>> map = new HashMap<>();
         String line;
         while ((line = in.readLine()) != null) {

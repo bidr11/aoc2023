@@ -17,7 +17,7 @@ public class Main {
     public static void solve(Utils.Solver<Integer> solver) throws IOException {
         String filename = Utils.getFilename(Main.class);
         in = new BufferedReader(new FileReader(filename));
-        int ans = solver.solve();
+        int ans = solver.solve(in);
         System.out.println(ans);
     }
 }

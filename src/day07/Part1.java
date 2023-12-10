@@ -2,6 +2,7 @@ package day07;
 
 import utils.Utils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
 
@@ -29,7 +30,7 @@ public class Part1 implements Utils.Solver<Integer>{
         }
         return matchingCards;
     }
-    public Integer solve() throws IOException {
-        return CamelCards.solve(cardValues, this::getMatchingCards);
+    public Integer solve(BufferedReader in) throws IOException {
+        return CamelCards.solve(in, cardValues, this::getMatchingCards);
     }
 }

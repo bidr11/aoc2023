@@ -16,7 +16,7 @@ public class Main {
     public static void solve(Utils.Solver<Long> solver) throws IOException {
         String filename = Utils.getFilename(Main.class);
         in = new BufferedReader(new FileReader(filename));
-        long ans = solver.solve();
+        long ans = solver.solve(in);
         System.out.println(ans);
     }
 }
